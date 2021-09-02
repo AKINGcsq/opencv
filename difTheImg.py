@@ -6,8 +6,8 @@ import numpy as np
 def difTheImg():
     x = 15
     y = 8
-    filename = 'f:/vsc_workspace/opencv/0826/c_1.BMP'
-    filename2 = 'f:/vsc_workspace/opencv/0826/cp_1.BMP'
+    filename = 'f:/vsc_workspace/opencv/0902/c_5.BMP'
+    filename2 = 'f:/vsc_workspace/opencv/0902/cp_5.BMP'
     img1 = cv2.imread(filename, cv2.IMREAD_GRAYSCALE)
     img2 = cv2.imread(filename2, cv2.IMREAD_GRAYSCALE)
     # ret, binary = cv2.threshold(gray, 50 ,255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)
@@ -17,7 +17,6 @@ def difTheImg():
 
     pmin = np.zeros(1280)
     pmax = np.zeros(1280)
-    pmean = np.zeros(1280)
 
     img3 = img2 - img1
     rows, cols = img2.shape
@@ -32,4 +31,3 @@ def difTheImg():
             if img4[i, j] > 255:
                 img4[i, j] = 255
     return img4.astype('uint8')
-
